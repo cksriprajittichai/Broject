@@ -28,9 +28,7 @@ public class Game extends Canvas implements Runnable {
 		r = new Random();
 		
 		handler.addObject(new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player, handler));
-		for (int i = 0; i < 5; i++) {
-			handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-		}
+		handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
 	}
 	public synchronized void start() {
 		thread = new Thread(this);
@@ -49,11 +47,11 @@ public class Game extends Canvas implements Runnable {
 	
 	public void run() {
 		this.requestFocus();
-		long lastTime = System.nanoTime();
-		double amountOfTicks = 60.0;
+		long lastTime = System.nanoTime(); // nanoseconds since arbitrary origin time
+		double amountOfTicks = 60.0; // originally 60.0
 		double ns = 1000000000 / amountOfTicks;
 		double delta = 0;
-		long timer = System.currentTimeMillis();
+		long timer = System.currentTimeMillis(); // current time in milliseconds
 		int frames = 0;
 		while(running) {
 			long now = System.nanoTime();
@@ -65,11 +63,12 @@ public class Game extends Canvas implements Runnable {
 			}
 			if(running)
 				render();
-			frames++; 
 			
+			frames++; 
+
 			if(System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
-				// System.out.println("FPS: " + frames);
+				System.out.println("FPS: " + frames);
 				frames = 0;	
 			}
 		}

@@ -9,14 +9,14 @@ import java.awt.Rectangle;
 public class Trail extends GameObject {
 
 	private float alpha = 1;
-	
+	private float life;
+
 	private Handler handler;
 	private Color color;
 	
 	private int width, height;
-	private float life;
 	
-	// life = 0.01 to 0.1
+	// life = 0.001 to 0.1
 	
 	public Trail(int x, int y, ID id, Color color, int width, int height, float life, Handler handler) {
 		super(x, y, id);
@@ -30,7 +30,7 @@ public class Trail extends GameObject {
 	@Override
 	public void tick() {
 		if (alpha > life) {
-			alpha -= (life - 0.001);
+			alpha -= (life - 0.0001f);
 		} else handler.removeObject(this);
 	}
 

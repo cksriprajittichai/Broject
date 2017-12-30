@@ -50,8 +50,4 @@ public class Player extends GameObject{
 		g.setColor(Color.white);
 		g.fillRect(x, y, 32, 32);
 	}
-	
-	
-
-
 }
