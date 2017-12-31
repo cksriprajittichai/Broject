@@ -13,7 +13,7 @@ public class KeyInput extends KeyAdapter {
 	
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
-		System.out.println("keyPressed: " + key);
+//		System.out.println("keyPressed: " + key);
 		for(int i = 0; i < handler.object.size(); i++){
 			GameObject tempObject = handler.object.get(i);
 			
@@ -31,7 +31,7 @@ public class KeyInput extends KeyAdapter {
 	
 	public void keyReleased(KeyEvent e) {
 		int key = e.getKeyCode();
-		System.out.println("keyReleased: " + key);
+//		System.out.println("keyReleased: " + key);
 		for(int i = 0; i < handler.object.size(); i++){
 			GameObject tempObject = handler.object.get(i);
 			if (tempObject.getId() == ID.Player) {
