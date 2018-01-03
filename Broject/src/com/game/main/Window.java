@@ -24,3 +24,4 @@ public class Window extends Canvas {
 		game.start();
 	}
 }
+
