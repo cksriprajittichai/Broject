@@ -1,3 +1,1 @@
-# The Broject
-
-Two brothers. One Java game. Zero experience.
+Following RealTutsGML Youtube tutorials on Java game development.
